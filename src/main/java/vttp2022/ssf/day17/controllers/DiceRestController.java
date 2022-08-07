@@ -19,7 +19,7 @@ import vttp2022.ssf.day17.services.DiceService;
 
 @RestController
 // produces -> Accept:
-@RequestMapping(path="/roll")
+@RequestMapping(path="/rolls")
 public class DiceRestController {
 
     @Autowired
@@ -47,7 +47,7 @@ public class DiceRestController {
 
         return ResponseEntity.ok(csvString);
     }
-
+    // comment out either CSV or JSON @GetMapping. 1 produces JSON 1 produces csv file.
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getRollAsJson(
             @RequestParam(name = "dice", defaultValue = "1") Integer count) {
