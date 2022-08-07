@@ -24,7 +24,6 @@ public class DiceController {
 
         model.addAttribute("dices", rolls);
         return "roll.html";
-
     }
     
 }
